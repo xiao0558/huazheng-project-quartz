@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+	<modelVersion>4.0.0</modelVersion>
+
+	<artifactId>huazheng-project-quartz</artifactId>
+	<packaging>jar</packaging>
+
+	<name>huazheng-project-quartz</name>
+
+	<parent>
+		<groupId>com.huazheng.project</groupId>
+		<artifactId>huazheng-project</artifactId>
+		<version>0.0.1-SNAPSHOT</version>
+	</parent>
+	
+	<!-- 提交到maven仓库 -->
+	<distributionManagement>
+		<repository>
+			<id>maven-releases</id>
+			<name>maven Releases</name>
+			<url>http://47.103.50.109:18084/repository/maven-releases/</url>
+		</repository>
+		<snapshotRepository>
+			<id>maven-snapshots</id>
+			<name>maven Snapshots</name>
+			<url>http://47.103.50.109:18084/repository/maven-snapshots/</url>
+		</snapshotRepository>
+	</distributionManagement>
+	
+    <repositories>
+        <repository>
+            <id>maven-snapshots</id>
+            <name>maven-snapshots</name>
+            <url>http://47.103.50.109:18084/repository/maven-snapshots/</url>
+            <releases>
+                <enabled>false</enabled>
+            </releases>
+            <snapshots>
+                <enabled>true</enabled>
+                <updatePolicy>always</updatePolicy>
+                <checksumPolicy>warn</checksumPolicy>
+            </snapshots>
+        </repository>
+        <repository>
+            <id>maven-releases</id>
+            <name>maven-releases</name>
+            <url>http://47.103.50.109:18084/repository/maven-releases/</url>
+            <releases>
+                <enabled>true</enabled>
+            </releases>
+            <snapshots>
+                <enabled>false</enabled>
+            </snapshots>
+        </repository>
+    </repositories>
+    
+	<dependencies>
+		<dependency>
+		    <groupId>org.springframework.boot</groupId>
+		    <artifactId>spring-boot-starter-quartz</artifactId>
+		</dependency>
+		
+		<!-- mysql驱动 -->
+		<dependency>
+			<groupId>mysql</groupId>
+			<artifactId>mysql-connector-java</artifactId>
+		</dependency>
+		<dependency>
+		    <groupId>com.pivotal</groupId>
+		    <artifactId>greenplum-jdbc</artifactId>
+		    <version>5.1.4</version>
+		</dependency>
+		
+		<!-- 连接池 -->
+		<dependency>
+			<groupId>com.alibaba</groupId>
+			<artifactId>druid-spring-boot-starter</artifactId>
+		</dependency>
+
+		<!-- mybatis 分页插件 -->
+		<dependency>
+			<groupId>com.github.pagehelper</groupId>
+			<artifactId>pagehelper-spring-boot-starter</artifactId>
+		</dependency>
+
+		<!-- mybatis -->
+		<dependency>
+			<groupId>com.baomidou</groupId>
+			<artifactId>mybatis-plus-boot-starter</artifactId>
+		</dependency>
+		
+	    <dependency>
+	        <groupId>org.springframework.kafka</groupId>
+	        <artifactId>spring-kafka</artifactId>
+	    </dependency>
+		
+		<!-- hutool -->
+		<dependency>
+		    <groupId>cn.hutool</groupId>
+		    <artifactId>hutool-all</artifactId>
+		</dependency>
+		
+		<dependency>
+			<groupId>redis.clients</groupId>
+			<artifactId>jedis</artifactId>
+		</dependency>
+		<dependency>
+			<groupId>org.springframework.data</groupId>
+			<artifactId>spring-data-redis</artifactId>
+		</dependency>
+		
+		<!-- lombok -->
+		<dependency>
+			<groupId>org.projectlombok</groupId>
+			<artifactId>lombok</artifactId>
+		</dependency>
+			
+		<dependency>
+			<groupId>ngdbc</groupId>
+			<artifactId>ngdbc</artifactId>
+			<version>1.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>sqljdbc42</groupId>
+			<artifactId>sqljdbc42</artifactId>
+			<version>1.0</version>
+		</dependency>
+		
+		<dependency>
+			<groupId>org.springframework.boot</groupId>
+			<artifactId>spring-boot-configuration-processor</artifactId>
+			<optional>true</optional>
+		</dependency>
+		
+		<dependency>
+            <groupId>com.alibaba</groupId>
+            <artifactId>fastjson</artifactId>
+            <version>1.2.74</version>
+        </dependency>
+        
+        <dependency>
+			<groupId>io.springfox</groupId>
+			<artifactId>springfox-swagger2</artifactId>
+			<version>2.9.2</version>
+		</dependency>
+		
+		<dependency>
+		    <groupId>com.xuxueli</groupId>
+		    <artifactId>xxl-job-core</artifactId>
+		    <version>2.2.0</version>
+		</dependency>
+		
+	</dependencies>
+
+	<build>
+		<plugins>
+			<plugin>
+				<groupId>org.springframework.boot</groupId>
+				<artifactId>spring-boot-maven-plugin</artifactId>
+				<configuration>
+					<executable>true</executable>
+					<mainClass>com.huazheng.project.Application</mainClass>
+				</configuration>
+				<executions>
+					<execution>
+						<goals>
+							<goal>repackage</goal>
+						</goals>
+					</execution>
+				</executions>
+			</plugin>
+		</plugins>
+	</build>
+	
+</project>

@@ -1,0 +1,17 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.huazheng.project.greenplum.mapper.GreenplumMapper">
+
+    <select id="selectGpAbcList" resultType="GpAbc">
+		select * from mssql_abc ${ew.customSqlSegment}
+	</select>
+    
+    <select id="selectGpTb1List" resultType="GpTb1">
+		select * from mysql_tb1 ${ew.customSqlSegment}
+	</select>
+	
+	<select id="selectGpTest1List" resultType="GpTest1">
+		select * from hana_test1 ${ew.customSqlSegment}
+	</select>
+	
+</mapper>

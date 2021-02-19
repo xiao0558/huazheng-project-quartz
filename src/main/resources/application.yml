@@ -1,0 +1,178 @@
+#生产
+xxl:
+  job:
+    admin:
+      addresses: http://192.168.80.52:8080/xxl-job-admin
+    executor:
+      appname: ${spring.application.name}
+      port: 31025
+spring:
+  application:
+    name: huazheng-project-quartz
+  redis:
+    host: 192.168.80.55
+    database: 1
+  kafka:
+    bootstrap-servers: 192.168.80.55:9092
+    consumer:
+      enable-auto-commit: true
+      auto-commit-interval: 100
+      group-id: ${spring.application.name}
+      key-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+      value-deserializer: org.apache.kafka.common.serialization.StringDeserializer
+    producer:
+      key-serializer: org.apache.kafka.common.serialization.StringSerializer
+      value-serializer: org.apache.kafka.common.serialization.StringSerializer
+  datasource:
+    hana:
+      type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:sap://192.168.80.55:39017?databaseName=SYSTEMDB
+      username: GUOFENG
+      password: WSX3edc2qaz@
+      driver-class-name: com.sap.db.jdbc.Driver
+      druid:
+        initial-size: 5
+        min-idle: 6
+        max-active: 20
+        max-wait: 10000
+        time-between-eviction-runs-millis: 600000wwww
+        min-evictable-idle-time-millis: 300000
+        validation-query: select 'hello world' from dummy
+        test-while-idle: true
+        test-on-borrow: false
+        test-on-return: false
+        keep-alive: true
+        remove-abandoned: true
+        remove-abandoned-timeout: 80
+        log-abandoned: true
+        max-pool-prepared-statement-per-connection-size: 5
+        filter:
+          stat:
+            slow-sql-millis: 10000
+            log-slow-sql: true
+            merge-sql: false
+          log4j:
+            statement-executable-sql-log-enable: true
+          slf4j:
+            statement-executable-sql-log-enable: true
+          log4j2:
+            statement-executable-sql-log-enable: true
+          commons-log:
+            statement-executable-sql-log-enable: true
+          config:
+            enabled: true
+        time-between-log-stats-millis: 120000
+    mssql:
+      type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:sqlserver://192.168.80.55:1433;DatabaseName=test2
+      username: sa
+      password: 1qaz@WSX3edc
+      driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+      druid:
+        initial-size: 5
+        min-idle: 6
+        max-active: 20
+        max-wait: 10000
+        time-between-eviction-runs-millis: 600000
+        min-evictable-idle-time-millis: 300000
+        validation-query: select '1'
+        test-while-idle: true
+        test-on-borrow: false
+        test-on-return: false
+        keep-alive: true
+        remove-abandoned: true
+        remove-abandoned-timeout: 80
+        log-abandoned: true
+        max-pool-prepared-statement-per-connection-size: 5
+        filter:
+          stat:
+            slow-sql-millis: 10000
+            log-slow-sql: true
+            merge-sql: false
+          log4j:
+            statement-executable-sql-log-enable: true
+          slf4j:
+            statement-executable-sql-log-enable: true
+          log4j2:
+            statement-executable-sql-log-enable: true
+          commons-log:
+            statement-executable-sql-log-enable: true
+          config:
+            enabled: true
+        time-between-log-stats-millis: 120000
+    mysql:
+      type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:mysql://192.168.80.55:3306/abc?useUnicode=true&characterEncoding=utf-8&serverTimezone=Asia/Shanghai
+      username: clds
+      password: clds
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      druid:
+        initial-size: 5
+        min-idle: 6
+        max-active: 20
+        max-wait: 10000
+        time-between-eviction-runs-millis: 600000
+        min-evictable-idle-time-millis: 300000
+        validation-query: select '1'
+        test-while-idle: true
+        test-on-borrow: false
+        test-on-return: false
+        keep-alive: true
+        remove-abandoned: true
+        remove-abandoned-timeout: 80
+        log-abandoned: true
+        max-pool-prepared-statement-per-connection-size: 5
+        filter:
+          stat:
+            slow-sql-millis: 10000
+            log-slow-sql: true
+            merge-sql: false
+          log4j:
+            statement-executable-sql-log-enable: true
+          slf4j:
+            statement-executable-sql-log-enable: true
+          log4j2:
+            statement-executable-sql-log-enable: true
+          commons-log:
+            statement-executable-sql-log-enable: true
+          config:
+            enabled: true
+        time-between-log-stats-millis: 120000
+    greenplum:
+      type: com.alibaba.druid.pool.DruidDataSource
+      url: jdbc:pivotal:greenplum://192.168.80.50:5432;DatabaseName=test1
+      username: gpadmin
+      password: gpadmin
+      driver-class-name: com.pivotal.jdbc.GreenplumDriver
+      druid:
+        initial-size: 5
+        min-idle: 6
+        max-active: 20
+        max-wait: 10000
+        time-between-eviction-runs-millis: 600000
+        min-evictable-idle-time-millis: 300000
+        validation-query: select '1'
+        test-while-idle: true
+        test-on-borrow: false
+        test-on-return: false
+        keep-alive: true
+        remove-abandoned: true
+        remove-abandoned-timeout: 80
+        log-abandoned: true
+        max-pool-prepared-statement-per-connection-size: 5
+        filter:
+          stat:
+            slow-sql-millis: 10000
+            log-slow-sql: true
+            merge-sql: false
+          log4j:
+            statement-executable-sql-log-enable: true
+          slf4j:
+            statement-executable-sql-log-enable: true
+          log4j2:
+            statement-executable-sql-log-enable: true
+          commons-log:
+            statement-executable-sql-log-enable: true
+          config:
+            enabled: true
+        time-between-log-stats-millis: 120000

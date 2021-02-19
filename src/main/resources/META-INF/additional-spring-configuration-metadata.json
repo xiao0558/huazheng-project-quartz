@@ -1,0 +1,25 @@
+{"properties": [{
+  "name": "druid",
+  "type": "java.util.Map",
+  "description": "A description for 'feign'"
+},{
+  "name": "xxl",
+  "type": "java.util.Map",
+  "description": "A description for 'feign'"
+},{
+  "name": "spring.datasource.hana",
+  "type": "java.util.Map",
+  "description": "A description for 'feign'"
+},{
+  "name": "spring.datasource.mssql",
+  "type": "java.util.Map",
+  "description": "A description for 'feign'"
+},{
+  "name": "spring.datasource.mysql",
+  "type": "java.util.Map",
+  "description": "A description for 'feign'"
+},{
+  "name": "spring.datasource.greenplum",
+  "type": "java.util.Map",
+  "description": "A description for 'feign'"
+}]}

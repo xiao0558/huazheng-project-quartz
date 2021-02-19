@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.huazheng.project.hana.mapper.HanaMapper">
+
+    <select id="selectHanaTest1List" resultType="HanaTest1">
+		select top 20 "$rowid$" as rowids, * from test1 
+		where "$rowid$" &gt; #{rowids}
+		order by "$rowid$"
+	</select>
+		
+</mapper>
